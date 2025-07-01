@@ -1,0 +1,189 @@
+ /* .list-table-format{
+    display:grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 0.5fr;
+    align-items:center;
+    padding:12px 15px;
+    border : 1px solid #cacaca
+ }
+
+ .list-table-format.title{
+    background-color: #f9f9f9;
+ }
+
+ .list-table-format img{
+    width: 50px;
+ }
+ .list-table-format img, .list-table-format p, .title p{
+    text-align: center;
+ }
+
+ .cursor{
+
+     cursor:pointer;
+}
+
+ @media (max-width:600px){
+    .list-table-format{
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+    .list-table-format.title{
+        display: none;
+    }
+ }
+  */
+
+ /* Container styling */
+/* Main List Container */
+
+
+/* --- Global Container --- */
+.list {
+  min-height: 100vh;
+  width: 100%;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Heading --- */
+.list > p {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+/* --- Table Container --- */
+.list-table {
+  width: 100%;
+  max-width: 1000px;
+  background-color: #fff;
+  border-radius: 15px;
+  overflow-x: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Table Rows --- */
+.list-table-format {
+  display: grid;
+  grid-template-columns: 70px 2fr 1fr 1fr 50px;
+  align-items: center;
+  padding: 18px 24px;
+  font-size: 17px;
+  color: #444;
+  border-bottom: 1px solid #eee;
+  transition: background 0.3s ease;
+}
+
+.list-table-format:hover {
+  background-color: #f9f9f9;
+}
+
+/* --- Title Row --- */
+.list-table-format.title {
+  background-color: #f2f2f2;
+  font-weight: 600;
+  color: #222;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* --- Image Styling --- */
+.list-table-format img {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Delete Button --- */
+.cursor {
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: crimson;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.cursor:hover {
+  transform: scale(1.3);
+  color: darkred;
+}
+
+/* --- Scrollbar Styling --- */
+.list-table::-webkit-scrollbar {
+  height: 8px;
+}
+.list-table::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.list-table::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 10px;
+}
+
+/* --- Tablet Responsive --- */
+@media (max-width: 768px) {
+  .list-table-format {
+    grid-template-columns: 60px 1.5fr 1fr 1fr 40px;
+    font-size: 15px;
+    padding: 16px;
+  }
+
+  .list > p {
+    font-size: 28px;
+  }
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 420px) {
+  .list-table-format {
+    display: grid;
+    grid-template-columns: 60px auto auto;
+    grid-template-areas:
+      "img name delete"
+      "img category delete"
+      "img price delete";
+    padding: 16px 12px;
+    font-size: 14px;
+    gap: 6px;
+  }
+
+  .list-table-format.title {
+    display: none;
+  }
+
+  .list-table-format img {
+    grid-area: img;
+    width: 45px;
+    height: 45px;
+  }
+
+  .list-table-format p:nth-of-type(1) {
+    grid-area: name;
+  }
+
+  .list-table-format p:nth-of-type(2) {
+    grid-area: category;
+  }
+
+  .list-table-format p:nth-of-type(3) {
+    grid-area: price;
+  }
+
+  .list-table-format p:nth-of-type(4) {
+    grid-area: delete;
+    text-align: right;
+  }
+
+  .list > p {
+    font-size: 24px;
+  }
+}
