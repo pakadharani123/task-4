@@ -9,11 +9,11 @@ import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 const  App = () => {
-  
-  const url = import.meta.env.VITE_API_URL;
+
+ // const url = import.meta.env.VITE_API_URL;
 
   
- //const url = 'https://foodprep.onrender.com'
+ const url = 'https://task-4-backend-1ltl.onrender.com'
  //  const url = 'http://localhost:4000'
   return (
     <div className='app'>
