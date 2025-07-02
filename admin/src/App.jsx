@@ -10,8 +10,11 @@ import 'react-toastify/dist/ReactToastify.css'
 
 const  App = () => {
   
- // const url = 'https://foodprep.onrender.com'
-   const url = 'http://localhost:4000'
+  const url = import.meta.env.VITE_API_URL;
+
+  
+ //const url = 'https://foodprep.onrender.com'
+ //  const url = 'http://localhost:4000'
   return (
     <div className='app'>
       <ToastContainer/>
