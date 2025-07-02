@@ -44,21 +44,7 @@ catch(error){
     
            
   };
-  //   console.log(response.data)
-  //   if(response.data.success){
-  //     setData({
-  //       name:'',
-  //       description:"",
-  //       price:"",
-  //       category:"Salad"
-  //     })
-  //     setImage(false)
-  //     toast.success(response.data.message)
-  //   }
-  //   else{
-  //     toast.error(response.data.message)
-  //   }
-  // }
+
   return (
     
     <div className="add">
